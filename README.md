@@ -3,3 +3,4 @@ RedCoast's LD41 submission
 
 
 Can you see this?
+Yes.
