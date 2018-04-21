@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: PalmTree01.ma
-//Last modified: Sat, Apr 21, 2018 02:55:34 PM
+//Last modified: Sat, Apr 21, 2018 02:56:59 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -17,13 +17,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "482B79B1-45B2-492B-E7ED-F9804FA43A5C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -31.815114350126947 49.885996475266289 40.763607475972407 ;
-	setAttr ".r" -type "double3" -26.738352729889918 -757.39999999981342 0 ;
+	setAttr ".t" -type "double3" -97.045894313781787 43.880529400771181 56.234210722022013 ;
+	setAttr ".r" -type "double3" -9.338352729889797 -780.59999999981176 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "30B1FA95-425E-8308-AF25-74AF45B5347F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 52.708612122171282;
+	setAttr ".coi" 109.13689037169217;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
