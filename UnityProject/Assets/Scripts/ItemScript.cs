@@ -13,7 +13,10 @@ public class ItemScript : MonoBehaviour {
 	public float hungerToAdd;
 	public float thirstToLose;
 	public float energyToLose;
+	public float cookTime;
 	public GameObject eatFX;
+	public GameObject cookFX;
+	public GameObject cookedVariant;
 
 	[Header("Drink Settings")]
 	public float hungerToLose;
@@ -29,6 +32,8 @@ public class ItemScript : MonoBehaviour {
 	private GameObject player;
 
 	private bool coconutThrown;
+	private bool isInFire;
+	private bool isCooking;
 
 	private Rigidbody rb;
 
@@ -52,6 +57,32 @@ public class ItemScript : MonoBehaviour {
 		{
 			Instantiate (coconutBroken, transform.position, transform.rotation);
 			Destroy (gameObject);
+		}
+	}
+
+	void OnTriggerEnter(Collider coll)
+	{
+		if (coll.gameObject.tag == "Fire") 
+		{
+			if (itemType == "Food") 
+			{
+				isInFire = true;
+				if (!isCooking) 
+				{
+					StartCoroutine (CookItem ());
+				}
+			}
+		}
+	}
+
+	void OnTriggerExit(Collider coll)
+	{
+		if (coll.gameObject.tag == "Fire") 
+		{
+			if (itemType == "Food") 
+			{
+				isInFire = false;
+			}
 		}
 	}
 
@@ -93,6 +124,18 @@ public class ItemScript : MonoBehaviour {
 			player.GetComponent<PlayerSurvivalScript> ().CheckStats();
 			player.GetComponent<PlayerSurvivalScript> ().UpdateUI();
 			Instantiate (eatFX, transform.position, transform.rotation);
+			Destroy (gameObject);
+		}
+	}
+
+	IEnumerator CookItem()
+	{
+		isCooking = true;
+		yield return new WaitForSeconds (cookTime);
+		if (isInFire) 
+		{
+			Instantiate (cookedVariant, transform.position, transform.rotation);
+			yield return new WaitForSeconds (0.05f);
 			Destroy (gameObject);
 		}
 	}

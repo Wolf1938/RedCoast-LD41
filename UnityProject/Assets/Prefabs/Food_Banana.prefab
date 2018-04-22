@@ -116,7 +116,11 @@ MonoBehaviour:
   hungerToAdd: 4
   thirstToLose: 2
   energyToLose: 1
+  cookTime: 5
   eatFX: {fileID: 1903863299688390, guid: eceb76820c4388944b8f90132e3da622, type: 2}
+  cookFX: {fileID: 0}
+  cookedVariant: {fileID: 1818194076427832, guid: 0adbd6d0141a1444fbed82a13cce1e20,
+    type: 2}
   hungerToLose: 0
   thirstToAdd: 0
   energyToLoseCoconut: 0

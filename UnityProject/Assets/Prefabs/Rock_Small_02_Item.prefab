@@ -93,7 +93,7 @@ Rigidbody:
   m_GameObject: {fileID: 1548896070525790}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 3
+  m_Drag: 1
   m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -116,7 +116,10 @@ MonoBehaviour:
   hungerToAdd: 0
   thirstToLose: 0
   energyToLose: 0
+  cookTime: 0
   eatFX: {fileID: 0}
+  cookFX: {fileID: 0}
+  cookedVariant: {fileID: 0}
   hungerToLose: 0
   thirstToAdd: 0
   energyToLoseCoconut: 0
