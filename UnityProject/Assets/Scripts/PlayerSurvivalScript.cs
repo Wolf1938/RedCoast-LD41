@@ -42,7 +42,7 @@ public class PlayerSurvivalScript : MonoBehaviour {
 		StartCoroutine (StatReduction ());
 	}
 
-	void UpdateUI()
+	public void UpdateUI()
 	{
 		healthBar.value = health;
 		hungerBar.value = hunger;
@@ -50,7 +50,7 @@ public class PlayerSurvivalScript : MonoBehaviour {
 		energyBar.value = energy;
 	}
 
-	void CheckStats()
+	public void CheckStats()
 	{
 		if (hunger < 0) 
 		{
@@ -66,21 +66,6 @@ public class PlayerSurvivalScript : MonoBehaviour {
 		{
 			energy = 0;
 		}
-	}
-
-	public void IncreaseHunger()
-	{
-		hunger += hungerIncrease;
-	}
-
-	public void IncreaseThirst()
-	{
-		thirst += thirstIncrease;
-	}
-
-	public void IncreaseEnergy()
-	{
-		energy += energyIncrease;
 	}
 	
 	IEnumerator StatReduction()
