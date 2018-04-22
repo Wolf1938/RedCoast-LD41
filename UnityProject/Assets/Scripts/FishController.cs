@@ -25,6 +25,7 @@ public class FishController : MonoBehaviour
             Transform Parent = gameObject.transform.parent;
             Transform parent = gameObject.transform.parent;
             parent.Rotate(Vector3.up, Time.deltaTime * 20 * speed);
+            //transform.rotation = Quaternion.Euler(0, 0, 0);            
         }
         if (!isRunning)
         {
