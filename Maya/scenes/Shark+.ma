@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Shark.ma
-//Last modified: Sun, Apr 22, 2018 08:10:37 PM
+//Name: Shark+.ma
+//Last modified: Sun, Apr 22, 2018 08:14:03 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -92,7 +92,7 @@ createNode mesh -n "SharkShape" -p "Shark";
 	setAttr -av ".iog[0].og[8].gid";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.3203125 0.13802500814199448 ;
+	setAttr ".pv" -type "double2" 0.52268613874912262 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -1237,4 +1237,4 @@ connectAttr "polyMirror1.out" "polySoftEdge2.ip";
 connectAttr "SharkShape.wm" "polySoftEdge2.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "SharkShape.iog" ":initialShadingGroup.dsm" -na;
-// End of Shark.ma
+// End of Shark+.ma

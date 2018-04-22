@@ -26,6 +26,7 @@ public class FishController : MonoBehaviour
         {
             Transform parent = gameObject.transform.parent;
             parent.Rotate(Vector3.up, Time.deltaTime * 20 * speed);
+            //transform.rotation = Quaternion.Euler(0, 0, 0);            
         }
         if (!isRunning)
         {
@@ -37,8 +38,12 @@ public class FishController : MonoBehaviour
 
     public void Interact()
     {
+<<<<<<< HEAD
 		rb.useGravity = true;
 		dead = true;
+=======
+        dead = true;
+>>>>>>> 51989b638897f9637fe6e1594604d03f44870af4
         anim.SetBool("Dead", dead);
     }
 

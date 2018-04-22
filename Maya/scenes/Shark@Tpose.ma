@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Shark.ma
-//Last modified: Sun, Apr 22, 2018 08:10:37 PM
+//Name: Shark@Tpose.ma
+//Last modified: Sun, Apr 22, 2018 08:15:55 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -16,13 +16,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "26FE2E04-4250-D725-2A7D-2692E84A844A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.162611986884845 5.7376258162517351 18.04258654087042 ;
-	setAttr ".r" -type "double3" -9.3383527298092837 -1435.7999999998942 9.9659972922842566e-17 ;
+	setAttr ".t" -type "double3" -8.6649115290694656 9.8133890397560144 12.142008757593295 ;
+	setAttr ".r" -type "double3" -24.938352729590648 -1479.7999999997892 2.0699094694737361e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4B3E5685-473F-4B44-99CB-3EBA0F9CBA9E";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 17.646195423940267;
+	setAttr ".coi" 16.457320492508845;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -92,7 +92,7 @@ createNode mesh -n "SharkShape" -p "Shark";
 	setAttr -av ".iog[0].og[8].gid";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.3203125 0.13802500814199448 ;
+	setAttr ".pv" -type "double2" 0.52268613874912262 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -1039,7 +1039,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "9E23BC4B-4147-A90B-6E62-E385C19B0FE9";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 47 -ast 0 -aet 48 ";
 	setAttr ".st" 6;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "072C2A98-4A84-F9AA-49BD-C7B10987E867";
@@ -1164,8 +1164,7 @@ createNode polySoftEdge -n "polySoftEdge2";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr ".a" 0;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -1237,4 +1236,4 @@ connectAttr "polyMirror1.out" "polySoftEdge2.ip";
 connectAttr "SharkShape.wm" "polySoftEdge2.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "SharkShape.iog" ":initialShadingGroup.dsm" -na;
-// End of Shark.ma
+// End of Shark@Tpose.ma
