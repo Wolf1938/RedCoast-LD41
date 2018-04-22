@@ -26,13 +26,24 @@ public class InteractionScript : MonoBehaviour {
 				RaycastHit hit;
 				Ray ray = camera.ScreenPointToRay (Input.mousePosition);
 
-				if (Physics.Raycast (ray, out hit, 5)) {
+				if (Physics.Raycast (ray, out hit, 5)) 
+				{
 					Transform objectHit = hit.transform;
-					if (objectHit.gameObject.tag == "Item") {
+					if (objectHit.gameObject.tag == "Item") 
+					{
 						objectHit.position = holdSpot.position;
 						objectHit.rotation = holdSpot.rotation;
 						objectHit.parent = holdSpot;
 						itemHeld = objectHit.gameObject;
+						itemHeld.GetComponent<Rigidbody> ().isKinematic = true;
+					}
+					if (objectHit.gameObject.tag == "Fish") 
+					{
+						objectHit.position = holdSpot.position;
+						objectHit.rotation = holdSpot.rotation;
+						objectHit.parent = holdSpot;
+						itemHeld = objectHit.gameObject;
+						itemHeld.GetComponent<FishController> ().Interact ();
 						itemHeld.GetComponent<Rigidbody> ().isKinematic = true;
 					}
 				}

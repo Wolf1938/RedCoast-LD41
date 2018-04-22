@@ -8,6 +8,7 @@ public class FishController : MonoBehaviour
     private bool dead;
     private bool isRunning;
     private float speed = 1;
+	private Rigidbody rb;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class FishController : MonoBehaviour
         dead = false;
         isRunning = false;
         anim.SetBool("Dead", dead);
+		rb = GetComponent<Rigidbody> ();
     }
 
     private void FixedUpdate()
@@ -22,7 +24,6 @@ public class FishController : MonoBehaviour
 
         if (!dead)
         {
-            Transform Parent = gameObject.transform.parent;
             Transform parent = gameObject.transform.parent;
             parent.Rotate(Vector3.up, Time.deltaTime * 20 * speed);
         }
@@ -34,8 +35,10 @@ public class FishController : MonoBehaviour
         anim.speed = speed;
     }
 
-    void Interact()
+    public void Interact()
     {
+		rb.useGravity = true;
+		dead = true;
         anim.SetBool("Dead", dead);
     }
 
