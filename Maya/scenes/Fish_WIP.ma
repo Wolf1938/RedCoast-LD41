@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Fish_WIP.ma
-//Last modified: Sun, Apr 22, 2018 04:07:51 PM
+//Last modified: Sun, Apr 22, 2018 04:17:22 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "9DA063FB-45F1-DB31-1683-0E8C47756B72";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 6.4248003426147253 3.4568710905284799 17.37897561745271 ;
+	setAttr ".t" -type "double3" 9.3480829497778721 4.9620892760621755 24.006944540517992 ;
 	setAttr ".r" -type "double3" -11.738352729653535 -336.19999999993394 -8.6904231771754121e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "7A88679A-4CFD-5CEE-F081-1E974F6BC021";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 20.275967121541179;
+	setAttr ".coi" 27.674699109694625;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -458,7 +458,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "168EE540-48E6-3F74-03F4-758E31C8E6E0";
+	rename -uid "3DEAD82D-4D90-78D7-6F8C-B0AB38C853E4";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -606.54759494558311 -399.4047460338432 ;
 	setAttr ".tgi[0].vh" -type "double2" 608.92854723192499 397.02379374750137 ;

@@ -21,11 +21,14 @@ public class ItemScript : MonoBehaviour {
 
 	[Header("UNIQUE: Coconut Settings")]
 	public float energyToLoseCoconut;
+	public GameObject coconutBroken;
 
 	[Header("UNIQUE: Raw Fish Settings")]
 	public float energyToLoseRawFish;
 
 	private GameObject player;
+
+	private bool coconutThrown;
 
 	private Rigidbody rb;
 
@@ -39,10 +42,16 @@ public class ItemScript : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Item") 
 		{
-			if (coll.gameObject.GetComponent<ItemScript>().itemType == "Food" || coll.gameObject.GetComponent<ItemScript>().itemType == "Rock" )
+			if (coll.gameObject.GetComponent<ItemScript>().itemType == "Food" || coll.gameObject.GetComponent<ItemScript>().itemType == "Rock" || coll.gameObject.GetComponent<ItemScript>().itemType == "Coconut" )
 			{
 				coll.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
 			}
+		}
+
+		if (coconutThrown && itemType == "Coconut") 
+		{
+			Instantiate (coconutBroken, transform.position, transform.rotation);
+			Destroy (gameObject);
 		}
 	}
 
@@ -51,6 +60,12 @@ public class ItemScript : MonoBehaviour {
 		if (itemType == "Rock") 
 		{
 			rb.AddRelativeForce (Vector3.forward * throwForce, ForceMode.Impulse);
+		}
+
+		if (itemType == "Coconut") 
+		{
+			rb.AddRelativeForce (Vector3.forward * throwForce, ForceMode.Impulse);
+			coconutThrown = true;
 		}
 
 		if (itemType == "Food") 
@@ -68,6 +83,17 @@ public class ItemScript : MonoBehaviour {
 		{
 			PlayerSurvivalScript.hunger -= hungerToLose;
 			PlayerSurvivalScript.thirst -= thirstToAdd;
+		}
+
+		if (itemType == "CoconutBroken") 
+		{
+			PlayerSurvivalScript.hunger -= hungerToLose;
+			PlayerSurvivalScript.thirst += thirstToAdd;
+			PlayerSurvivalScript.energy -= energyToLoseCoconut;
+			player.GetComponent<PlayerSurvivalScript> ().CheckStats();
+			player.GetComponent<PlayerSurvivalScript> ().UpdateUI();
+			Instantiate (eatFX, transform.position, transform.rotation);
+			Destroy (gameObject);
 		}
 	}
 }
