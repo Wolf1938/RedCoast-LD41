@@ -46,6 +46,10 @@ public class InteractionScript : MonoBehaviour {
 						itemHeld.GetComponent<FishController> ().Interact ();
 						itemHeld.GetComponent<Rigidbody> ().isKinematic = true;
 					}
+                    if (objectHit.gameObject.name == "Melon-Chan")
+                    {
+                        objectHit.GetComponent<DatingSim>();
+                    }
 				}
 			} 
 			else 
