@@ -19,7 +19,8 @@ public class InteractionScript : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Fire1")) 
 		{
-			if (itemHeld == null) {
+			if (itemHeld == null) 
+			{
 				RaycastHit hit;
 				Ray ray = camera.ScreenPointToRay (Input.mousePosition);
 
@@ -27,6 +28,7 @@ public class InteractionScript : MonoBehaviour {
 					Transform objectHit = hit.transform;
 					if (objectHit.gameObject.tag == "Item") {
 						objectHit.position = holdSpot.position;
+						objectHit.rotation = holdSpot.rotation;
 						objectHit.parent = holdSpot;
 						itemHeld = objectHit.gameObject;
 						itemHeld.GetComponent<Rigidbody> ().isKinematic = true;
@@ -38,6 +40,17 @@ public class InteractionScript : MonoBehaviour {
 				itemHeld.transform.parent = null;
 				itemHeld.transform.position = dropPosition.position;
 				itemHeld.GetComponent<Rigidbody> ().isKinematic = false;
+				itemHeld = null;
+			}
+		}
+
+		if (Input.GetButtonDown ("Fire2")) 
+		{
+			if (itemHeld != null) 
+			{
+				itemHeld.transform.parent = null;
+				itemHeld.GetComponent<Rigidbody> ().isKinematic = false;
+				itemHeld.GetComponent<ItemScript> ().Use ();
 				itemHeld = null;
 			}
 		}
