@@ -88,7 +88,7 @@ public class PlayerSurvivalScript : MonoBehaviour {
 		UpdateUI();
 		while (playerAlive) 
 		{
-			yield return new WaitForSeconds (1);
+			yield return new WaitForSeconds (60);
 			hunger -= hungerReduction;
 			thirst -= thirstReduction;
 			energy -= energyReduction;
