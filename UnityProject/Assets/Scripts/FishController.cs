@@ -36,6 +36,7 @@ public class FishController : MonoBehaviour
 
     void Interact()
     {
+        dead = true;
         anim.SetBool("Dead", dead);
     }
 
