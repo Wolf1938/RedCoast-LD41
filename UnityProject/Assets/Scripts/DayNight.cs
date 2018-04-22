@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class DayNight : MonoBehaviour {
 
+	public Transform startRotationRef;
+
 	public float timeSpeed = 1;
 
-	Skybox sky;
-	Material skyMat;
-
-	void Awake()
+	void Start()
 	{
-		skyMat = RenderSettings.skybox;
+		transform.rotation = startRotationRef.rotation;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		transform.Rotate(Vector3.right * timeSpeed * Time.deltaTime);
