@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionScript : MonoBehaviour {
 
@@ -9,11 +10,12 @@ public class InteractionScript : MonoBehaviour {
 	public Transform holdSpot;
 	public Transform dropPosition;
 
-	private GameObject itemHeld;
+	public Image crosshair;
 
-	void Start(){
-		
-	}
+	public Sprite defaultCross;
+	public Sprite handCross;
+
+	private GameObject itemHeld;
 
 	void Update()
 	{
@@ -53,6 +55,32 @@ public class InteractionScript : MonoBehaviour {
 				itemHeld.GetComponent<ItemScript> ().Use ();
 				itemHeld = null;
 			}
+		}
+
+		if (itemHeld == null) {
+			RaycastHit hit;
+			Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+
+			if (Physics.Raycast (ray, out hit, 5)) 
+			{
+				Transform objectHit = hit.transform;
+				if (objectHit.gameObject.tag == "Item") 
+				{
+					crosshair.sprite = handCross;
+				} 
+				else 
+				{
+					crosshair.sprite = defaultCross;
+				}
+			}
+			else 
+			{
+				crosshair.sprite = defaultCross;
+			}
+		} 
+		else 
+		{
+			crosshair.sprite = defaultCross;
 		}
 	}
 }
