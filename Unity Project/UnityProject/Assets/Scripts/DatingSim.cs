@@ -15,7 +15,6 @@ public class DatingSim : MonoBehaviour
     public Slider loveBar;
 
     private string[] options1s = {"You need me to do anything?" };
-    private string[] responses1 = {"Would you like a fish?" };
     private string[] options2s = { "'Sup", "You up to much?", "What are you going to do when we get off this island?" };
     private string[] responses2 = { "Wow, that's so interesting! You're so cool.", "Yeah, thought not... I'm not doing much either.", "Oh, that's cool. I'm not really sure, honestly." };
 	private string[] options3s = { "So... Just the two of us... How about that?", "So... How're you liking the weather?" };  
@@ -58,9 +57,6 @@ public class DatingSim : MonoBehaviour
 				fpsController = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
 			}
 			fpsController.enabled = false;
-			/*fpsController.m_MouseLook.lockCursor = false;
-        fpsController.m_MouseLook.XSensitivity = 0;
-        fpsController.m_MouseLook.YSensitivity = 0;*/
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
             if (liveQuest[0])
@@ -193,8 +189,6 @@ public class DatingSim : MonoBehaviour
 
     public void Option1()
     {
-		Debug.Log ("Doing quest: " + currentQuest);
-		Debug.Log (livequest);
 		if (livequest == -1) 
 		{
 			int ran = Random.Range(1, 4);
