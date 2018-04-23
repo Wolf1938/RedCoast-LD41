@@ -121,6 +121,7 @@ MonoBehaviour:
   cookFX: {fileID: 0}
   cookedVariant: {fileID: 1818194076427832, guid: 0adbd6d0141a1444fbed82a13cce1e20,
     type: 2}
+  Food: Banana
   hungerToLose: 0
   thirstToAdd: 0
   energyToLoseCoconut: 0

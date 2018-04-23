@@ -48,16 +48,31 @@ public class InteractionScript : MonoBehaviour {
 					}
                     if (objectHit.gameObject.name == "Melon-Chan")
                     {
-                        objectHit.GetComponent<DatingSim>();
+                        objectHit.GetComponent<DatingSim>().Interact(itemHeld);
                     }
 				}
 			} 
 			else 
 			{
-				itemHeld.transform.parent = null;
-				itemHeld.transform.position = dropPosition.position;
-				itemHeld.GetComponent<Rigidbody> ().isKinematic = false;
-				itemHeld = null;
+                RaycastHit hit;
+				Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, 5))
+                {
+                    Transform objectHit = hit.transform;
+                    if (objectHit.gameObject.name == "Melon-Chan")
+                    {
+                        objectHit.GetComponent<DatingSim>().Interact(itemHeld);
+                        itemHeld.GetComponent<ItemScript>().Give(objectHit.gameObject);
+                    }
+                    else
+                    {
+                        itemHeld.transform.parent = null;
+                        itemHeld.transform.position = dropPosition.position;
+                        itemHeld.GetComponent<Rigidbody>().isKinematic = false;
+                        itemHeld = null;
+                    }
+                }
 			}
 		}
 

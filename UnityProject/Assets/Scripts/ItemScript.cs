@@ -17,6 +17,7 @@ public class ItemScript : MonoBehaviour {
 	public GameObject eatFX;
 	public GameObject cookFX;
 	public GameObject cookedVariant;
+    public string Food;
 
 	[Header("Drink Settings")]
 	public float hungerToLose;
@@ -127,6 +128,25 @@ public class ItemScript : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+    public void Give(GameObject Melon)
+    {
+        if (itemType == "Coconut")
+        {
+            rb.AddRelativeForce(Vector3.forward * throwForce, ForceMode.Impulse);
+            coconutThrown = true;
+        }
+        if (itemType == "Food")
+        {
+            Instantiate(eatFX, Melon.transform.position, Melon.transform.rotation);
+            Destroy(gameObject);
+        }
+        if (itemType == "CoconutBroken")
+        {
+            Instantiate(eatFX, Melon.transform.position, Melon.transform.rotation);
+            Destroy(gameObject);
+        }
+    }
 
 	IEnumerator CookItem()
 	{
