@@ -731,8 +731,11 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
       value: 3
@@ -747,11 +750,14 @@ Prefab:
       value: 1
 >>>>>>> parent of e232361... update to scene
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       value: 1
 >>>>>>> parent of e232361... update to scene
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
       objectReference: {fileID: 0}
@@ -2210,8 +2216,11 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
       value: 4
@@ -2226,11 +2235,14 @@ Prefab:
       value: 2
 >>>>>>> parent of e232361... update to scene
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       value: 2
 >>>>>>> parent of e232361... update to scene
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
       objectReference: {fileID: 0}
@@ -2437,8 +2449,11 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
   m_RootOrder: 6
@@ -2453,11 +2468,14 @@ Transform:
   m_RootOrder: 3
 >>>>>>> parent of e232361... update to scene
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_RootOrder: 3
 >>>>>>> parent of e232361... update to scene
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
@@ -3167,8 +3185,11 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
   m_RootOrder: 8
@@ -3183,11 +3204,14 @@ RectTransform:
   m_RootOrder: 6
 >>>>>>> parent of e232361... update to scene
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_RootOrder: 6
 >>>>>>> parent of e232361... update to scene
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3296,8 +3320,11 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
   m_RootOrder: 7
@@ -3312,11 +3339,14 @@ Transform:
   m_RootOrder: 5
 >>>>>>> parent of e232361... update to scene
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_RootOrder: 5
 >>>>>>> parent of e232361... update to scene
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
+=======
+>>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
