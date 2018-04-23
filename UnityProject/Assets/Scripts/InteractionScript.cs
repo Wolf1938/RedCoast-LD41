@@ -29,6 +29,7 @@ public class InteractionScript : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit, 5)) 
 				{
 					Transform objectHit = hit.transform;
+					Debug.Log ("Hit: " + objectHit.gameObject.name);
 					if (objectHit.gameObject.tag == "Item") 
 					{
 						objectHit.position = holdSpot.position;
@@ -36,6 +37,7 @@ public class InteractionScript : MonoBehaviour {
 						objectHit.parent = holdSpot;
 						itemHeld = objectHit.gameObject;
 						itemHeld.GetComponent<Rigidbody> ().isKinematic = true;
+						Debug.Log ("Test fire");
 					}
 					if (objectHit.gameObject.tag == "Fish") 
 					{
