@@ -61,6 +61,7 @@ public class InteractionScript : MonoBehaviour {
                     Transform objectHit = hit.transform;
 					if (objectHit != null) 
 					{
+						Debug.Log ("Hit object");
 						if (objectHit.gameObject.name == "Melon-Chan") 
 						{
 							objectHit.GetComponent<DatingSim> ().Interact (itemHeld, gameObject);
