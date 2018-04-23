@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DatingSim : MonoBehaviour
 {
@@ -239,8 +240,7 @@ public class DatingSim : MonoBehaviour
 
     private void Win1()
     {
-        //win the game love ending
-        Debug.Log("YOU HAVE WON, owo what's this?. Melon-chan notices you");
+        SceneManager.LoadScene("LoveWin");
     }
 
     IEnumerator Option()
