@@ -114,9 +114,10 @@ GameObject:
   - component: {fileID: 54134372220423734}
   - component: {fileID: 65184084202625318}
   - component: {fileID: 114535284739578966}
+  - component: {fileID: 114964513285217414}
   m_Layer: 0
   m_Name: Fish@Tpose
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,6 +303,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57546f776870ad548a49a104bb2b9ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114964513285217414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919379642447932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddb79febf65d7b48b4203e753c0fd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: Food
+  throwForce: 0
+  hungerToAdd: 8
+  thirstToLose: -10
+  energyToLose: -15
+  cookTime: 15
+  eatFX: {fileID: 1378447670351984, guid: fc58fd54cf2bb5a49be8aaddcaa7b33a, type: 2}
+  cookFX: {fileID: 0}
+  cookedVariant: {fileID: 1953197246322584, guid: a44f752745a9d48478055de431c78b14,
+    type: 2}
+  Food: Fish-Raw
+  hungerToLose: 0
+  thirstToAdd: 0
+  energyToLoseCoconut: 0
+  coconutBroken: {fileID: 0}
+  energyToLoseRawFish: 0
 --- !u!137 &137356607544123220
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -29,7 +29,6 @@ public class InteractionScript : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit, 5)) 
 				{
 					Transform objectHit = hit.transform;
-					Debug.Log ("Hit: " + objectHit.gameObject.name);
 					if (objectHit.gameObject.tag == "Item") 
 					{
 						objectHit.position = holdSpot.position;
@@ -37,7 +36,6 @@ public class InteractionScript : MonoBehaviour {
 						objectHit.parent = holdSpot;
 						itemHeld = objectHit.gameObject;
 						itemHeld.GetComponent<Rigidbody> ().isKinematic = true;
-						Debug.Log ("Test fire");
 					}
 					if (objectHit.gameObject.tag == "Fish") 
 					{
@@ -58,23 +56,23 @@ public class InteractionScript : MonoBehaviour {
 			{
                 RaycastHit hit;
 				Ray ray = cam.ScreenPointToRay (Input.mousePosition);
-
                 if (Physics.Raycast(ray, out hit, 5))
                 {
                     Transform objectHit = hit.transform;
-                    if (objectHit.gameObject.name == "Melon-Chan")
-                    {
-                        objectHit.GetComponent<DatingSim>().Interact(itemHeld, gameObject);
-                        itemHeld.GetComponent<ItemScript>().Give(objectHit.gameObject);
-                    }
-                    else
-                    {
-                        itemHeld.transform.parent = null;
-                        itemHeld.transform.position = dropPosition.position;
-                        itemHeld.GetComponent<Rigidbody>().isKinematic = false;
-                        itemHeld = null;
-                    }
+					if (objectHit != null) 
+					{
+						Debug.Log ("Hit object");
+						if (objectHit.gameObject.name == "Melon-Chan") 
+						{
+							objectHit.GetComponent<DatingSim> ().Interact (itemHeld, gameObject);
+							itemHeld.GetComponent<ItemScript> ().Give (objectHit.gameObject);
+						}
+					}
                 }
+				itemHeld.transform.parent = null;
+				itemHeld.transform.position = dropPosition.position;
+				itemHeld.GetComponent<Rigidbody> ().isKinematic = false;
+				itemHeld = null;
 			}
 		}
 
@@ -89,14 +87,15 @@ public class InteractionScript : MonoBehaviour {
 			}
 		}
 
-		if (itemHeld == null) {
+		if (itemHeld == null) 
+		{
 			RaycastHit hit;
 			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 
 			if (Physics.Raycast (ray, out hit, 5)) 
 			{
 				Transform objectHit = hit.transform;
-				if (objectHit.gameObject.tag == "Item") 
+				if (objectHit.gameObject.tag == "Item" || objectHit.gameObject.tag == "Fish") 
 				{
 					crosshair.sprite = handCross;
 				} 
