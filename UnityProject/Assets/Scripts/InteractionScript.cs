@@ -19,6 +19,16 @@ public class InteractionScript : MonoBehaviour {
 
 	void Update()
 	{
+
+		RaycastHit hit2;
+		Ray ray2 = cam.ScreenPointToRay (Input.mousePosition);
+
+		if (Physics.Raycast (ray2, out hit2, 5)) 
+		{
+			Transform objectHit = hit2.transform;
+			Debug.Log ("Looking At: " + objectHit.gameObject.name);
+		}
+
 		if (Input.GetButtonDown ("Fire1")) 
 		{
 			if (itemHeld == null) 
@@ -29,6 +39,7 @@ public class InteractionScript : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit, 5)) 
 				{
 					Transform objectHit = hit.transform;
+					Debug.Log ("Hit: " + objectHit.gameObject.name);
 					if (objectHit.gameObject.tag == "Item") 
 					{
 						objectHit.position = holdSpot.position;
