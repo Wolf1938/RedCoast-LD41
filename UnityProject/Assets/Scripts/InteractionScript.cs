@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InteractionScript : MonoBehaviour {
 
-	public Camera camera;
+	public Camera cam;
 
 	public Transform holdSpot;
 	public Transform dropPosition;
@@ -24,7 +24,7 @@ public class InteractionScript : MonoBehaviour {
 			if (itemHeld == null) 
 			{
 				RaycastHit hit;
-				Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+				Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 
 				if (Physics.Raycast (ray, out hit, 5)) 
 				{
@@ -48,21 +48,21 @@ public class InteractionScript : MonoBehaviour {
 					}
                     if (objectHit.gameObject.name == "Melon-Chan")
                     {
-                        objectHit.GetComponent<DatingSim>().Interact(itemHeld);
+                        objectHit.GetComponent<DatingSim>().Interact(itemHeld, gameObject);
                     }
 				}
 			} 
 			else 
 			{
                 RaycastHit hit;
-				Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+				Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 
                 if (Physics.Raycast(ray, out hit, 5))
                 {
                     Transform objectHit = hit.transform;
                     if (objectHit.gameObject.name == "Melon-Chan")
                     {
-                        objectHit.GetComponent<DatingSim>().Interact(itemHeld);
+                        objectHit.GetComponent<DatingSim>().Interact(itemHeld, gameObject);
                         itemHeld.GetComponent<ItemScript>().Give(objectHit.gameObject);
                     }
                     else
@@ -89,7 +89,7 @@ public class InteractionScript : MonoBehaviour {
 
 		if (itemHeld == null) {
 			RaycastHit hit;
-			Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 
 			if (Physics.Raycast (ray, out hit, 5)) 
 			{
