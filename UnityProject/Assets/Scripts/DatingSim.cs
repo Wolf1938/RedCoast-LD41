@@ -58,7 +58,6 @@ public class DatingSim : MonoBehaviour
         fpsController.m_MouseLook.XSensitivity = 0;
         fpsController.m_MouseLook.YSensitivity = 0;*/
         Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
 
         GenericResponse();
         if (item == null)
@@ -205,7 +204,6 @@ public class DatingSim : MonoBehaviour
 
     public void Option3()
     {
-		Debug.Log ("Option 3 Pressed");
         response = responses3[ran3];
         StartCoroutine(Option());
     }
@@ -229,7 +227,6 @@ public class DatingSim : MonoBehaviour
         responseText.text = "";
         fpsController.enabled = true;
         Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Confined;
         yield return null;
     }
 }
