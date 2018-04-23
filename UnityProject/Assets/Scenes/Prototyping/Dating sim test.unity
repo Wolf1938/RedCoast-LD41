@@ -732,12 +732,15 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
       value: 3
 =======
       value: 2
@@ -746,6 +749,7 @@ Prefab:
 =======
       value: 1
 >>>>>>> parent of dfd25d7... Fixing Max's Shit
+<<<<<<< HEAD
 =======
       value: 1
 >>>>>>> parent of e232361... update to scene
@@ -760,6 +764,8 @@ Prefab:
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26ad4c105c5b1e0499f6b3c3a2357ba1, type: 2}
@@ -964,6 +970,48 @@ RectTransform:
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &533945187
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320497090182656, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6e5f176c9ff36fc439e663634eb34fe1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &544130103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,12 +2265,15 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
       value: 4
 =======
       value: 3
@@ -2231,6 +2282,7 @@ Prefab:
 =======
       value: 2
 >>>>>>> parent of dfd25d7... Fixing Max's Shit
+<<<<<<< HEAD
 =======
       value: 2
 >>>>>>> parent of e232361... update to scene
@@ -2245,6 +2297,8 @@ Prefab:
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
@@ -2450,12 +2504,15 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
   m_RootOrder: 6
 =======
   m_RootOrder: 4
@@ -2464,6 +2521,7 @@ Transform:
 =======
   m_RootOrder: 3
 >>>>>>> parent of dfd25d7... Fixing Max's Shit
+<<<<<<< HEAD
 =======
   m_RootOrder: 3
 >>>>>>> parent of e232361... update to scene
@@ -2478,6 +2536,8 @@ Transform:
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1524637080
 GameObject:
@@ -3186,12 +3246,15 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
   m_RootOrder: 8
 =======
   m_RootOrder: 7
@@ -3200,6 +3263,7 @@ RectTransform:
 =======
   m_RootOrder: 6
 >>>>>>> parent of dfd25d7... Fixing Max's Shit
+<<<<<<< HEAD
 =======
   m_RootOrder: 6
 >>>>>>> parent of e232361... update to scene
@@ -3214,6 +3278,8 @@ RectTransform:
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3321,12 +3387,15 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6c75743... Revert "Fixing Max's Shit"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
   m_RootOrder: 7
 =======
   m_RootOrder: 6
@@ -3335,6 +3404,7 @@ Transform:
 =======
   m_RootOrder: 5
 >>>>>>> parent of dfd25d7... Fixing Max's Shit
+<<<<<<< HEAD
 =======
   m_RootOrder: 5
 >>>>>>> parent of e232361... update to scene
@@ -3349,6 +3419,8 @@ Transform:
 >>>>>>> parent of 1c79645... Revert "update to scene"
 =======
 >>>>>>> parent of 1c79645... Revert "update to scene"
+=======
+>>>>>>> parent of d8dcdb1... Test revert, ignore
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097633880
 GameObject:
