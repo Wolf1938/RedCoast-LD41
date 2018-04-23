@@ -116,6 +116,17 @@ public class ItemScript : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
+		if (itemType == "Fish") 
+		{
+			PlayerSurvivalScript.hunger += hungerToAdd;
+			PlayerSurvivalScript.thirst -= thirstToLose;
+			PlayerSurvivalScript.energy -= energyToLose;
+			player.GetComponent<PlayerSurvivalScript> ().CheckStats();
+			player.GetComponent<PlayerSurvivalScript> ().UpdateUI();
+			Instantiate (eatFX, transform.position, transform.rotation);
+			Destroy (gameObject);
+		}
+
 		if (itemType == "Drink") 
 		{
 			PlayerSurvivalScript.hunger -= hungerToLose;
@@ -136,11 +147,6 @@ public class ItemScript : MonoBehaviour {
 
     public void Give(GameObject Melon)
     {
-        if (itemType == "Coconut")
-        {
-            rb.AddRelativeForce(Vector3.forward * throwForce, ForceMode.Impulse);
-            coconutThrown = true;
-        }
         if (itemType == "Food")
         {
             Instantiate(eatFX, Melon.transform.position, Melon.transform.rotation);
