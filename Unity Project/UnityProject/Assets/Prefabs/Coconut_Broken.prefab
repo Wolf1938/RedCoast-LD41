@@ -121,6 +121,7 @@ MonoBehaviour:
   eatFX: {fileID: 1378447670351984, guid: fc58fd54cf2bb5a49be8aaddcaa7b33a, type: 2}
   cookFX: {fileID: 0}
   cookedVariant: {fileID: 0}
+  Food: Coconut
   hungerToLose: 2
   thirstToAdd: 8
   energyToLoseCoconut: 6

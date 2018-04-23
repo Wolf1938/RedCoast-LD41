@@ -14,18 +14,19 @@ public class DatingSim : MonoBehaviour
     public Text melonresponseText;
     public Slider loveBar;
 
-    private string[] options1s = { "How about that weather?", "You look hungry" };
-    private string[] responses1 = { "you're right it is a nice day", "Would you like a fish?" };
-    private string[] options2s = { "'sup", "Whats going on?", "so... Just the two of us" };
-    private string[] responses2 = { "you're right it is a nice day", "I'm not doing much either", "what do you mean no means no?" };
-    private string[] options3s = { "Hey, you're finally awake", "I want you" };  
-    private string[] responses3 = { "hey, you look hungry, I'll get some fish", "I'll get us some fish" };
+    private string[] options1s = {"You need me to do anything?" };
+    private string[] responses1 = {"Would you like a fish?" };
+    private string[] options2s = { "'Sup", "You up to much?", "What are you going to do when we get off this island?" };
+    private string[] responses2 = { "Wow, that's so interesting! You're so cool.", "Yeah, thought not... I'm not doing much either.", "Oh, that's cool. I'm not really sure, honestly." };
+	private string[] options3s = { "So... Just the two of us... How about that?", "So... How're you liking the weather?" };  
+	private string[] responses3 = { "Heh... Cool.", "Yeah, it's pretty nice, I guess." };
 
     private string response;
 
     private int ran1;
     private int ran2;
     private int ran3;
+	private int currentQuest;
 
     private string[] questNames = { "Quest: Talk", "Quest: Banana", "Quest: Coconut", "Quest: Fish", "Quest: Se-Juice MelonChan" };
     private string[] questExplanations = { "Talk to Melon-Chan", "Get Melon-Chan a banana", "Get Melon-chan a coconut", "catch and cook a fish, feed it to melon-chan", "se-juice Melon-chan" };
@@ -49,19 +50,19 @@ public class DatingSim : MonoBehaviour
 
     public void Interact(GameObject item, GameObject Player)
     {
-        if (fpsController == null)
-        {
-            fpsController = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
-        }
-        fpsController.enabled = false;
-        /*fpsController.m_MouseLook.lockCursor = false;
-        fpsController.m_MouseLook.XSensitivity = 0;
-        fpsController.m_MouseLook.YSensitivity = 0;*/
-        Cursor.visible = true;
-
         GenericResponse();
         if (item == null)
         {
+			if (fpsController == null)
+			{
+				fpsController = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+			}
+			fpsController.enabled = false;
+			/*fpsController.m_MouseLook.lockCursor = false;
+        fpsController.m_MouseLook.XSensitivity = 0;
+        fpsController.m_MouseLook.YSensitivity = 0;*/
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
             if (liveQuest[0])
             {
                 CompleteQuest();
@@ -109,7 +110,7 @@ public class DatingSim : MonoBehaviour
 
     string GenericResponse()
     {
-        int ran = Random.Range(1, 10);
+        int ran = Random.Range(3, 10);
         melonResponse = "";
         for (int i = 0; i < ran; i++)
         {
@@ -135,20 +136,24 @@ public class DatingSim : MonoBehaviour
 
     private void RandomQuest()
     {        
+		Debug.Log ("Giving quest");
         for (int i = 0; i < liveQuest.Length; i++)
         {
             if (liveQuest[i])
             {
+				Debug.Log ("Yeet");
                 liveQuest[i] = false;
                 int ran = i;
                 while (ran == i)
                 {
                     ran = Random.Range(1, 4);
+					Debug.Log ("Doing quest: " + ran);
                 }
                 liveQuest[ran] = true;
                 livequest = i;
                 questName.text = questNames[ran];
                 questExplanation.text = questExplanations[ran];
+				StartCoroutine(SetQuest(ran));
                 return;
             }
         }
@@ -162,7 +167,7 @@ public class DatingSim : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             for (int i = 0; i < liveQuest.Length; i++)
             {
                 liveQuest[i] = false;
@@ -188,11 +193,41 @@ public class DatingSim : MonoBehaviour
 
     public void Option1()
     {
-        response = responses1[ran1];
-        if (ran1 == 1)
-        {
-            StartCoroutine(SetQuest(3));
-        }
+		Debug.Log ("Doing quest: " + currentQuest);
+		Debug.Log (livequest);
+		if (livequest == -1) 
+		{
+			int ran = Random.Range(1, 4);
+			if (ran == 1) 
+			{
+				response = "Would you like a banana?";
+			}
+			if (ran == 2) 
+			{
+				response = "Would you like a coconut?";
+			}
+			if (ran == 3) 
+			{
+				response = "Would you like a fish?";
+			}
+			currentQuest = ran;
+		}
+		else 
+		{
+			if (currentQuest == 1) 
+			{
+				response = "Don't worry, I'm still trying to get that banana.";
+			}
+			if (currentQuest == 2) 
+			{
+				response = "Don't worry, I'm still trying to get that coconut.";
+			}
+			if (currentQuest == 3) 
+			{
+				response = "Don't worry, I'm still trying to get that fish.";
+			}
+		}
+		StartCoroutine(SetQuest(currentQuest));
         StartCoroutine(Option());
     }
 
@@ -223,9 +258,10 @@ public class DatingSim : MonoBehaviour
         yield return new WaitForSeconds(1);
         melonresponseText.text = "";
         responseText.text = response;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         responseText.text = "";
         fpsController.enabled = true;
+		Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
         yield return null;
     }

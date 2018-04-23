@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33304027174728476}
   - component: {fileID: 23087838416517124}
   - component: {fileID: 135705712419581092}
+  - component: {fileID: 114632401714326214}
   m_Layer: 0
   m_Name: Melon-Chan
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312135489529704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: -5.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +86,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312135489529704}
   m_Mesh: {fileID: 4300000, guid: 6c18850e7a2a0144b877f7fdbe2254ce, type: 3}
+--- !u!114 &114632401714326214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1312135489529704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f09d0b7efb9d04e95e2a194296f21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: {fileID: 0}
+  questExplanation: {fileID: 0}
+  options1: {fileID: 0}
+  options2: {fileID: 0}
+  options3: {fileID: 0}
+  responseText: {fileID: 0}
+  melonresponseText: {fileID: 0}
+  loveBar: {fileID: 0}
 --- !u!135 &135705712419581092
 SphereCollider:
   m_ObjectHideFlags: 1
