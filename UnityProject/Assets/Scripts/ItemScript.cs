@@ -64,7 +64,7 @@ public class ItemScript : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Fire") 
 		{
-			if (itemType == "Food") 
+			if (itemType == "Food" || itemType == "Branch") 
 			{
 				isInFire = true;
 				if (!isCooking) 
@@ -79,7 +79,7 @@ public class ItemScript : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Fire") 
 		{
-			if (itemType == "Food") 
+			if (itemType == "Food" || itemType == "Branch") 
 			{
 				isInFire = false;
 			}
@@ -89,6 +89,11 @@ public class ItemScript : MonoBehaviour {
 	public void Use()
 	{
 		if (itemType == "Rock") 
+		{
+			rb.AddRelativeForce (Vector3.forward * throwForce, ForceMode.Impulse);
+		}
+
+		if (itemType == "Branch") 
 		{
 			rb.AddRelativeForce (Vector3.forward * throwForce, ForceMode.Impulse);
 		}
