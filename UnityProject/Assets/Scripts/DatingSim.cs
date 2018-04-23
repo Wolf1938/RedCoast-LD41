@@ -17,8 +17,8 @@ public class DatingSim : MonoBehaviour
     private string[] options1s = { "Hello", "Hi" };
     private string[] options2s = { "'sup", "Whats going on?" };
     private string[] options3s = { "Hey, you're finally awake", "I want you" };
-    private string[] responses1 = { "I guess you want a fish then", "Would you like a fish" };
-    private string[] responses2 = { "you want some fish", "Fish?" };
+    private string[] responses1 = { "I guess you want a fish then", "Would you like a fish?" };
+    private string[] responses2 = { "you want some fish?", "Fish?" };
     private string[] responses3 = { "hey, you look hungry, I'll get some fish", "I'll get us some fish" };
     private string response;
 
@@ -155,28 +155,35 @@ public class DatingSim : MonoBehaviour
     public void Option1()
     {
         response = responses1[ran1];
-        Option();
+        StartCoroutine(Option());
     }
 
     public void Option2()
     {
         response = responses2[ran2];
-        Option();
+        StartCoroutine(Option());
     }
 
     public void Option3()
     {
         response = responses3[ran3];
-        Option();
+        StartCoroutine(Option());
     }
 
-    public void Option()
+
+    IEnumerator Option()
     {
         options1.gameObject.SetActive(false);
         options2.gameObject.SetActive(false);
         options3.gameObject.SetActive(false);
         melonresponseText.text = melonResponse;
+        yield return new WaitForSeconds(1);
+        melonresponseText.text = "";
+        responseText.text = response;
+        yield return new WaitForSeconds(1);
+        responseText.text = "";
         fpsController.enabled = true;
         Cursor.visible = false;
+        yield return null;
     }
 }
