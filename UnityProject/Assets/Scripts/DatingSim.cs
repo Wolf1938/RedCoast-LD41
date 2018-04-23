@@ -45,11 +45,6 @@ public class DatingSim : MonoBehaviour
         options3.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        Cursor.visible = true;
-    }
-
     public void Interact(GameObject item, GameObject Player)
     {
         if (fpsController == null)
