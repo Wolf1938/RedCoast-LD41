@@ -1,17 +1,18 @@
 ﻿using System.Collections;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class Win : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public CanvasGroup cg;
+    public string levelName;
     private float FadeInFloat = 0;
     private bool ToFade = false;
     private bool Trigger = false;
 
     void Awake()
     {
-        StartCoroutine(Delay());
+        StartCoroutine(Delay(5));
     }
 
     private void Update()
@@ -20,14 +21,20 @@ public class Win : MonoBehaviour
         {
             FadeIn();
         }
-        if (cg.alpha == 1 && !Trigger)
-        {
-            Trigger = true;
-            StartCoroutine(Delay());
-        }
         if (FadeManager.ToFadeToBlack && FadeManager.FadeOutTextureAlpha == 0)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene(levelName);
+        }
+    }
+
+    public void Play()
+    {
+        if (!Trigger)
+        {
+            FadeManager.ToFadeOutTexture = false;
+            cg.alpha = 1;
+            Trigger = true;
+            StartCoroutine(Delay(1));
         }
     }
 
@@ -37,9 +44,14 @@ public class Win : MonoBehaviour
         cg.alpha = FadeInFloat;
     }
 
-    IEnumerator Delay()
+    public void Quit()
     {
-        yield return new WaitForSeconds(5);
+        Application.Quit();
+    }
+
+    IEnumerator Delay(int delay)
+    {
+        yield return new WaitForSeconds(delay);
         ToFade = true;
         if (Trigger)
         {
