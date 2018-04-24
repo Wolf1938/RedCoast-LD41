@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
         StartCoroutine(Delay(5));
     }
 
@@ -55,7 +58,10 @@ public class MainMenu : MonoBehaviour
         ToFade = true;
         if (Trigger)
         {
+			Cursor.visible = false;
             FadeManager.ToFadeToBlack = true;
+			yield return new WaitForSeconds (3);
+			SceneManager.LoadScene ("Level");
         }
     }
 }

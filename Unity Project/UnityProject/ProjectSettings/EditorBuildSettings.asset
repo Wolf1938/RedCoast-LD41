@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenue.unity
+    guid: 2e11128afaf3d7242b1471272826d068
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 19643c2e0176e2a478165eb36198df8c
+  - enabled: 1
+    path: Assets/Scenes/LoveWin.unity
+    guid: cf86c4bbdd066514ca63b90dc89b60d1

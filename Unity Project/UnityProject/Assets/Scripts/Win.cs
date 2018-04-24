@@ -27,7 +27,7 @@ public class Win : MonoBehaviour
         }
         if (FadeManager.ToFadeToBlack && FadeManager.FadeOutTextureAlpha == 0)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("MainMenue");
         }
     }
 
